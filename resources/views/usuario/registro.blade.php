@@ -13,7 +13,7 @@ $bd =mysqli_select_db ($coneccion, $basededatos);
 
     @csrf
       <div class="bg-white shadow-md rounded px-8 pt-5 pb-1 mb-4 flex flex-col">
-        <label class="uppercase tracking-wide text-black text-xl text-center font-bold mb-2">COMPLETAR SU REGISTRASE</label>
+        <label class="uppercase tracking-wide text-black text-xl text-center font-bold mb-2">COMPLETAR SU REGISTRO</label>
         <div class="mx-16 md:flex mb-6">
           <div class="md:w1/2 px-3 mb-6md:mb-0">
             <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="application-link">

@@ -1,29 +1,25 @@
-@extends('layouts.plantilla')
-@section('title','admin')
+@extends('layouts.plantillausu')
+@section('title','UNIFRANZ')
 
 @section('content')
-<br> <br><br>
+<?php
+//$codigo= session('codigo_usu');
+
+
+?>
 <br>
-<br>
-<br>
+   
+    
 <div class="container mx-auto">
-    <section class="mr-16 ml-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
-            <a href="usuario/formulario">
-                 <div class="bg-yellow-500 sm:bg-yellow-400 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
-                    <h1 class="text-center">BIENVENIDO QUERIDO ADMINISTRADOR !
-                    </h1>
+<b><h1 class="text-center bold ">BIENVENIDO USUARIO </h1></b>
+
                     
+<img src="{{url('https://unifranz.edu.bo/wp-content/uploads/2017/11/4968.jpg')}}" width="1300"/>
 
-                 </div>
-            </a>
-                
-        </div>
 
-    </section>
+
+
+
 </div>
-<br>
-<br>
-<br>
-<br>
+<br><br>
 @endsection

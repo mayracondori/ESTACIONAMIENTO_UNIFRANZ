@@ -33,27 +33,6 @@ module.exports = {
 }
 </style>
 
-<?php
-/*$codigo= session('codigo_usu');
-
-$coneccion = mysqli_connect ("localhost", "root", "" );
-$basededatos = 'cotel';
-$bd =mysqli_select_db ($coneccion, $basededatos);
-$codigo2 = " SELECT u.id, u.nombres_usu,u.apellidos_usu,u.codigo_usu, DAY(u.Fnac) as dnac,MONTH(u.Fnac) as mnac FROM usuario u WHERE u.codigo_usu=$codigo ";
-$resultado2 = mysqli_query($coneccion, $codigo2);
-while ($rest2 = mysqli_fetch_array($resultado2)) {
-    $idusu=$rest2['id'];
-    $nombres=$rest2['nombres_usu'];
-    $apellidos=$rest2['apellidos_usu'];
-    $dnac=$rest2['dnac'];
-    $mnac=$rest2['mnac'];
-    
-
-}
-$mes = date("m");
-$dia = date("d");  
- */
-?>
   <div class="py-3 px-5 bg-white rounded shadow-xl">
         <div class="-mx-1">
             <ul class="flex w-full flex-wrap items-center h-10">
@@ -80,64 +59,20 @@ $dia = date("d");
                             <ul class="list-reset">
                                
                                 <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/COTELI/public/usuario/rechazadas" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Lista de mis reservas</span> </a>
+                                    <a href="http://localhost/estacionamiento/public/admin/misreservas" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Lista de mis reservas</span> </a>
                                 </li>
                                 <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/COTELI/public/usuario/rechazadas" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Nueva reserva</span> </a>
+                                    <a href="http://localhost/estacionamiento/public/admin/nuevareserva" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Nueva reserva</span> </a>
                                 </li>
                                 <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/COTELI/public/usuario/poraprobar" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Detalle de mis derechos</span> </a>
+                                    <a href="http://localhost/estacionamiento/public/admin/normas" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Detalle de mis derechos</span> </a>
                                 </li>
                                  </ul>
                         </div>
                     </div>
                 </li>
-                <li class="block relative" x-data="{showChildren:false}" @click.away="showChildren=false">
-                    <a href="#" class="flex items-center h-10 leading-10 px-4 rounded cursor-pointer no-underline hover:no-underline transition-colors duration-100 mx-1 hover:bg-gray-100" @click.prevent="showChildren=!showChildren">
-                        <span class="mr-3 text-xl"> <i class="mdi mdi-layers-outline"></i> </span>
-                        <span>USUARIOS</span>
-                        <span class="ml-2"> <i class="mdi mdi-chevron-down"></i> </span>
-                    </a>
-                    <div class="bg-white shadow-md rounded border border-gray-300 text-sm absolute top-auto left-0 min-w-full w-56 z-30 mt-1" x-show="showChildren" x-transition:enter="transition ease duration-300 transform" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease duration-300 transform" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" style="display: none;">
-                        <span class="absolute top-0 left-0 w-3 h-3 bg-white border transform rotate-45 -mt-1 ml-6"></span>
-                        <div class="bg-white rounded w-full relative z-10 py-1">
-                            <ul class="list-reset">
-                               
-                                <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/estacionamiento/public/usuario/usuarios" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Lista de usuarios</span> </a>
-                                </li>
-                                <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a  href="http://localhost/COTELI/public/usuario/info" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Usuarios destacados</span> </a>
-                                </li>
-                                <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/estacionamiento/public/usuario/registro" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Nuevo usuario</span> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="block relative" x-data="{showChildren:false}" @click.away="showChildren=false">
-                    <a href="#" class="flex items-center h-10 leading-10 px-4 rounded cursor-pointer no-underline hover:no-underline transition-colors duration-100 mx-1 hover:bg-gray-100" @click.prevent="showChildren=!showChildren">
-                        <span class="mr-3 text-xl"> <i class="mdi mdi-web"></i> </span>
-                        <span>Reservas</span>
-                        <span class="ml-2"> <i class="mdi mdi-chevron-down"></i> </span>
-                    </a>
-                    <div class="bg-white shadow-md rounded border border-gray-300 text-sm absolute top-auto left-0 min-w-full w-56 z-30 mt-1" x-show="showChildren" x-transition:enter="transition ease duration-300 transform" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease duration-300 transform" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" style="display: none;">
-                        <span class="absolute top-0 left-0 w-3 h-3 bg-white border transform rotate-45 -mt-1 ml-6"></span>
-                        <div class="bg-white rounded w-full relative z-10 py-1">
-                            <ul class="list-reset">
-                                <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/COTELI/public/usuario/calendario" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Lista de reservas</span> </a>
-                                </li>
-                                <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                    <a href="http://localhost/estacionamiento/public/usuario/horarios" class="px-4 py-2 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">Lista de horarios</span> </a>
-                                </li>
-                                                            
-                              
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+               
+               
              
 
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
